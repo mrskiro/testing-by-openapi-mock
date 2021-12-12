@@ -9,7 +9,9 @@ if (process.env.NODE_ENV === 'development') {
   worker.start()
 }
 
-const client = new QueryClient()
+const client = new QueryClient({
+  defaultOptions: { queries: { retry: false } },
+})
 
 ReactDOM.render(
   <React.StrictMode>
