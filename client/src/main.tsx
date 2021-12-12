@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { App } from './App'
 
+import { worker } from './__mocks__/msw/browser'
+
+if (process.env.NODE_ENV === 'development') {
+  worker.start()
+}
+
 const client = new QueryClient()
 
 ReactDOM.render(
