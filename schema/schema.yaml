@@ -51,6 +51,11 @@ components:
         - title
         - body
         - completed
+      example:
+        id: '#id'
+        title: 'Todo title'
+        body: 'Todo body'
+        completed: false
 
 
 
