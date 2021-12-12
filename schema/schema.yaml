@@ -52,7 +52,7 @@ components:
         - body
         - completed
       example:
-        id: '#id'
+        id: 'testID'
         title: 'Todo title'
         body: 'Todo body'
         completed: false
