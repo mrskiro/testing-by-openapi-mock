@@ -3,19 +3,6 @@ info:
   title: "sample"
   version: "1.0.0"
 paths:
-  /todo:
-    get:
-      operationId: getTodos
-      summary: Get todos
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/Todo"
   /todo/{id}:
     parameters:
       - schema:
@@ -25,7 +12,7 @@ paths:
         required: true
     get:
       operationId: getTodo
-      summary: Get todos
+      summary: Get todo
       responses:
         '200':
           description: OK
