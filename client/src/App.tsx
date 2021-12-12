@@ -1,9 +1,22 @@
 import * as React from 'react'
-import { mockTodo } from './__mock__/todo'
+import { mockTodo } from './__mocks__/todo'
 import { useTodo } from './services/todo'
+import { Todo } from './components/Todo'
 
 export const App = () => {
-  const { data } = useTodo()
-  console.log(data)
-  return <div></div>
+  const { data, isLoading, isError } = useTodo()
+
+  if (isLoading) {
+    return <p>loading...</p>
+  }
+
+  if (isError || !data) {
+    return <p>error!</p>
+  }
+
+  return (
+    <div>
+      <Todo todo={data} />
+    </div>
+  )
 }

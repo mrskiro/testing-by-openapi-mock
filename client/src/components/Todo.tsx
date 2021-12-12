@@ -8,7 +8,7 @@ type Props = {
 export const Todo = (props: Props) => (
   <div>
     <h1>{props.todo.title}</h1>
-    <p>{props.todo.body}</p>
+    <p>{props.todo.isEmptyBody ? 'empty' : props.todo.body}</p>
     <label>completed</label>
     <input type="checkbox" checked={props.todo.completed} disabled />
   </div>
