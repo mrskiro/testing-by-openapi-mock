@@ -1,0 +1,57 @@
+openapi: 3.0.3
+info:
+  title: "sample"
+  version: "1.0.0"
+paths:
+  /todo:
+    get:
+      operationId: getTodos
+      summary: Get todos
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Todo"
+  /todo/{id}:
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      operationId: getTodo
+      summary: Get todos
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Todo"
+components:
+  schemas:
+    Todo:
+      type: object
+      properties:
+        id: 
+          type: string
+        title:
+          type: string
+        body:
+          type: string
+        completed:
+          type: boolean
+      required:
+        - id
+        - title
+        - body
+        - completed
+
+
+
+  
