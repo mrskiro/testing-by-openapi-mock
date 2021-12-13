@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { mockTodo } from './__mocks__/todo'
 import { useTodo } from './services/todo'
 import { Todo } from './components/Todo'
 
